@@ -1,0 +1,18 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Luciano dii Souza
+	email = lucianodiisouza@hotmail.com
+[core]
+	editor = code --wait
+[push]
+	followTags = true
+[alias]
+	c = !git add --all & git commit -m 
+	s = !git status -s
+	l = !git log --oneline --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+	amend = !git add --all && git commit --amend --no-edit
+	count = !git shortlog -s --grep
